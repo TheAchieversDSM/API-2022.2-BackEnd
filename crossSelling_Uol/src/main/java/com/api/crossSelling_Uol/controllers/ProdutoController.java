@@ -15,13 +15,13 @@ import com.api.crossSelling_Uol.repositories.ProdutoRepository;
 public class ProdutoController {
 	@Autowired
 	private ProdutoRepository bancoProduto;
-	
+
 	@GetMapping("/produtos")
 	public List<Produto> pegarProdutos(){
 		return bancoProduto.findAll();
 	}
-	
-	@PostMapping("/criar")
+
+	@PostMapping("/produtoCriar")
 	public void criarProduto(@RequestBody Produto novoProduto) {
 		bancoProduto.save(novoProduto);
 	}

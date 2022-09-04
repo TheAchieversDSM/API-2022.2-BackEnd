@@ -12,13 +12,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Produto {
+public class Servico {
 	
 	@Id
 	private String id;
 	private String nome;
 	private String descricao;
-	private List<Produto> complementares;
+	private List<Produto> produtos;
 	
 	public String getId() {
 		return id;
@@ -38,11 +38,11 @@ public class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public List<Produto> getComplementares() {
-		return complementares;
+	public List<Produto> getProdutos() {
+		return produtos;
 	}
-	public void setComplementares(List<Produto> complementares) {
-		this.complementares = complementares;
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
-	
+
 }
