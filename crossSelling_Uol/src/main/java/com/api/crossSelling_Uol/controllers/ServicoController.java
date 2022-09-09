@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,32 +15,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
+import com.api.crossSelling_Uol.services.ServicoService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/servicos")
 public class ServicoController {
 	@Autowired
 	private ServicoRepository bancoServico;
+	@Autowired
+	private ServicoService servicoService;
 	
-	@GetMapping("/pegarServico") //Esclarecer com Gerson sobre Get ou Post
-	public Optional<Servico> pegarProduto(@RequestBody Servico servico) {
-		return bancoServico.findById(servico.getId());
+	@GetMapping("/pegarServico/{id}")
+	public Optional<Servico> pegarServico(@PathVariable String id) {
+		return servicoService.findById(id);
 	}
 	
 	@GetMapping("/pegarTodosServicos")
-	public List<Servico> pegarTodosServicos(){
-		return bancoServico.findAll();
-	}
-	
-	@PutMapping("/atualizarServico")
-	public void atualizarProduto(@RequestBody Servico servicoAtualizado) {
-		bancoServico.deleteById(servicoAtualizado.getId());
-		bancoServico.save(servicoAtualizado);
+	public List<Servico> pegarTodosServicos() {
+		return servicoService.findAll();
 	}
 	
 	@PostMapping("/criarServico")
-	public void criarProduto(@RequestBody Servico novoServico) {
-		bancoServico.save(novoServico);
+	public void criarServico(@RequestBody Servico novoServico) {
+		servicoService.insert(novoServico);
+	}
+	
+	@PutMapping("/atualizarServico")
+	public void atualizarServico(@RequestBody Servico servicoAtualizado) {
+		servicoService.update(servicoAtualizado);
 	}
 	
 }
