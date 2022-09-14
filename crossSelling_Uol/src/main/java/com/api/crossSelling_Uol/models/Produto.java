@@ -15,5 +15,6 @@ public class Produto {
 	private String nome;
 	private String preco;
 	private String descricao;
+	private String categoria;
 	private List<Produto> complementares;
 }
