@@ -14,21 +14,27 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository bancoProduto;
 	
-	public Optional<Produto> findById(String id) {
+	public Optional<Produto> encontrarPeloId(String id) {
 		return bancoProduto.findById(id);
 	}
 	
-	public List<Produto> findAll(){
+	public List<Produto> encontrarTodos(){
 		return bancoProduto.findAll();
 	}
 	
-	public Produto insert(Produto novoProduto) {
+	public Produto inserirProduto(Produto novoProduto) {
 		return bancoProduto.save(novoProduto);
 	}
 	
-	public void update(Produto produtoAtualizado) {
-		bancoProduto.deleteById(produtoAtualizado.getId());
+	public void atualizarProduto(Produto produtoAtualizado) {
 		bancoProduto.save(produtoAtualizado);
+	}
+	
+	public void atualizarComplementos( List<Produto> complemento, String id ) {
+		Produto alvo = bancoProduto.findById(id).orElse(null);
+		alvo.getComplementares().addAll(complemento);
+		bancoProduto.save(alvo);
+		
 	}
 	
 	

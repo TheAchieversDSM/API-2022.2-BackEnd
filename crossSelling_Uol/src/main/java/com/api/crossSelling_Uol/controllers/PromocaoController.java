@@ -25,30 +25,26 @@ import com.api.crossSelling_Uol.services.PromocaoService;
 @RequestMapping("/promocoes")
 public class PromocaoController {
 	@Autowired
-	@SuppressWarnings("unused")
-	private PromocaoRepository bancoPromocao;
-	
-	@Autowired
 	private PromocaoService servicoPromocao;
 	
 	@GetMapping("/pegarPromocao/{id}")
 	public Optional<Promocao> pegarPromocao(@PathVariable String id ) {
-		return servicoPromocao.findById(id);
+		return servicoPromocao.encontrarPeloId(id);
 	}
 	
 	@GetMapping("/pegarTodasPromocoes")
 	public List<Promocao> pegarTodosProdutos() {
-		return servicoPromocao.findAll();
+		return servicoPromocao.encontrarTodos();
 	}
 	
 	@PostMapping("/criarPromocao")
 	public void criarPacote(@RequestBody Promocao novaPromocao) {
-		servicoPromocao.insert(novaPromocao);
+		servicoPromocao.inserirPromocao(novaPromocao);
 	}
 	
 	@PutMapping("/atualizarPromocao")
 	public void atualizarPromocao(@RequestBody Promocao promocaoAtualizada) {
-		servicoPromocao.update(promocaoAtualizada);
+		servicoPromocao.atualizarPromocao(promocaoAtualizada);
 	}
 	
 }

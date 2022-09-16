@@ -16,20 +16,19 @@ public class PromocaoService {
 	@Autowired
 	private PromocaoRepository bancoPromocao;
 	
-	public Optional<Promocao> findById(String id) {
+	public Optional<Promocao> encontrarPeloId(String id) {
 		return bancoPromocao.findById(id);
 	}
 	
-	public List<Promocao> findAll(){
+	public List<Promocao> encontrarTodos(){
 		return bancoPromocao.findAll();
 	}
 	
-	public Promocao insert(Promocao novaPromocao) {
+	public Promocao inserirPromocao(Promocao novaPromocao) {
 		return bancoPromocao.save(novaPromocao);
 	}
 	
-	public void update(Promocao promocaoAtualizada) {
-		bancoPromocao.deleteById(promocaoAtualizada.getId());
+	public void atualizarPromocao(Promocao promocaoAtualizada) {
 		bancoPromocao.save(promocaoAtualizada);
 	}
 	

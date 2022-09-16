@@ -22,30 +22,31 @@ import com.api.crossSelling_Uol.services.ProdutoService;
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
-	@SuppressWarnings("unused")
-	@Autowired
-	private ProdutoRepository bancoProduto;
-	
 	@Autowired
 	private ProdutoService servicoProduto;
 	
 	@GetMapping("/pegarProduto/{id}")
 	public Optional<Produto> pegarProduto(@PathVariable String id ) {
-		return servicoProduto.findById(id);
+		return servicoProduto.encontrarPeloId(id);
 	}
 	
 	@GetMapping("/pegarTodosProdutos")
 	public List<Produto> pegarTodosProdutos() {
-		return servicoProduto.findAll();
+		return servicoProduto.encontrarTodos();
 	}
 	
 	@PostMapping("/criarProduto")
 	public void criarProduto(@RequestBody Produto novoProduto) {
-		servicoProduto.insert(novoProduto);
+		servicoProduto.inserirProduto(novoProduto);
 	}
 	
 	@PutMapping("/atualizarProduto")
 	public void atualizarProduto(@RequestBody Produto produtoAtualizado) {
-		servicoProduto.update(produtoAtualizado);
+		servicoProduto.atualizarProduto(produtoAtualizado);
+	}
+	
+	@PutMapping("/atualizarComplementos/{id}")
+	public void atualizarComplementos(@RequestBody List<Produto> complemento, @PathVariable String id ) {
+		servicoProduto.atualizarComplementos(complemento, id);
 	}
 }

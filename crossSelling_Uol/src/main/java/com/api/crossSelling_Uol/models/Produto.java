@@ -1,5 +1,6 @@
 package com.api.crossSelling_Uol.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -16,5 +17,5 @@ public class Produto {
 	private String preco;
 	private String descricao;
 	private String categoria;
-	private List<Produto> complementares;
+	private List<Produto> complementares = new ArrayList<>() ;
 }

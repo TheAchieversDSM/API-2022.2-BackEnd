@@ -25,29 +25,25 @@ import com.api.crossSelling_Uol.services.ProdutoService;
 @RequestMapping("/pacotes")
 public class PacoteController {
 	@Autowired
-	@SuppressWarnings("unused")
-	private PacoteRepository bancoPacote;
-	
-	@Autowired
 	private PacoteService servicoPacote;
 	
 	@GetMapping("/pegarPacote/{id}")
 	public Optional<Pacote> pegarPacote(@PathVariable String id ) {
-		return servicoPacote.findById(id);
+		return servicoPacote.encontrarPeloId(id);
 	}
 	
 	@GetMapping("/pegarTodosPacotes")
-	public List<Pacote> pegarTodosProdutos() {
-		return servicoPacote.findAll();
+	public List<Pacote> pegarTodosPacotes() {
+		return servicoPacote.encontrarTodos();
 	}
 	
 	@PostMapping("/criarPacote")
 	public void criarPacote(@RequestBody Pacote novoPacote) {
-		servicoPacote.insert(novoPacote);
+		servicoPacote.inserirPacote(novoPacote);
 	}
 	
 	@PutMapping("/atualizarProduto")
 	public void atualizarProduto(@RequestBody Pacote pacoteAtualizado) {
-		servicoPacote.update(pacoteAtualizado);
+		servicoPacote.atualizarPacote(pacoteAtualizado);
 	}
 }

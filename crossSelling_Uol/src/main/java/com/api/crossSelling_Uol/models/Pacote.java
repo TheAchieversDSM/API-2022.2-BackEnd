@@ -1,5 +1,6 @@
 package com.api.crossSelling_Uol.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -11,6 +12,6 @@ public class Pacote {
 	private String id;
 	private String nome;
 	private String descricao;
-	private List<Servico> servicos;
+	private List<Servico> servicos = new ArrayList<>();
 	
 }

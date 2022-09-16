@@ -22,28 +22,26 @@ import com.api.crossSelling_Uol.services.ServicoService;
 @RequestMapping("/servicos")
 public class ServicoController {
 	@Autowired
-	private ServicoRepository bancoServico;
-	@Autowired
 	private ServicoService servicoService;
 	
 	@GetMapping("/pegarServico/{id}")
 	public Optional<Servico> pegarServico(@PathVariable String id) {
-		return servicoService.findById(id);
+		return servicoService.encontrarPeloId(id);
 	}
 	
 	@GetMapping("/pegarTodosServicos")
 	public List<Servico> pegarTodosServicos() {
-		return servicoService.findAll();
+		return servicoService.encontrarTodos();
 	}
 	
 	@PostMapping("/criarServico")
 	public void criarServico(@RequestBody Servico novoServico) {
-		servicoService.insert(novoServico);
+		servicoService.inserirServico(novoServico);
 	}
 	
 	@PutMapping("/atualizarServico")
 	public void atualizarServico(@RequestBody Servico servicoAtualizado) {
-		servicoService.update(servicoAtualizado);
+		servicoService.atualizarServico(servicoAtualizado);
 	}
 	
 }

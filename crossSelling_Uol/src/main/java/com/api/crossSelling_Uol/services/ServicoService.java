@@ -14,20 +14,19 @@ public class ServicoService {
 	@Autowired
 	private ServicoRepository bancoServico;
 	
-	public Optional<Servico> findById(String id) {
+	public Optional<Servico> encontrarPeloId(String id) {
 		return bancoServico.findById(id);
 	}
 	
-	public List<Servico> findAll(){
+	public List<Servico> encontrarTodos(){
 		return bancoServico.findAll();
 	}
 
-	public Servico insert(Servico novoServico) {
+	public Servico inserirServico(Servico novoServico) {
 		return bancoServico.save(novoServico);
 	}
 
-	public void update(Servico servicoAtualizado) {
-		bancoServico.deleteById(servicoAtualizado.getId());
+	public void atualizarServico(Servico servicoAtualizado) {
 		bancoServico.save(servicoAtualizado);
 	}
 }

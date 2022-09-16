@@ -16,20 +16,19 @@ public class PacoteService {
 	@Autowired
 	private PacoteRepository bancoPacote;
 	
-	public Optional<Pacote> findById(String id) {
+	public Optional<Pacote> encontrarPeloId(String id) {
 		return bancoPacote.findById(id);
 	}
 	
-	public List<Pacote> findAll(){
+	public List<Pacote> encontrarTodos(){
 		return bancoPacote.findAll();
 	}
 	
-	public Pacote insert(Pacote novoPacote) {
+	public Pacote inserirPacote(Pacote novoPacote) {
 		return bancoPacote.save(novoPacote);
 	}
 	
-	public void update(Pacote pacoteAtualizado) {
-		bancoPacote.deleteById(pacoteAtualizado.getId());
+	public void atualizarPacote(Pacote pacoteAtualizado) {
 		bancoPacote.save(pacoteAtualizado);
 	}
 	
