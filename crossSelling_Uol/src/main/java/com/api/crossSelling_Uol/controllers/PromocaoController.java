@@ -20,30 +20,36 @@ import com.api.crossSelling_Uol.repositories.PromocaoRepository;
 import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.PromocaoService;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/promocoes")
+@Api(value="Promocoes")
 public class PromocaoController {
 	@Autowired
 	private PromocaoService servicoPromocao;
 	
+	@ApiOperation("Pegar promocao existente pelo ID")
 	@GetMapping("/pegarPromocao/{id}")
 	public Optional<Promocao> pegarPromocao(@PathVariable String id ) {
 		return servicoPromocao.encontrarPeloId(id);
 	}
 	
+	@ApiOperation("Pegar todas as promoções existentes")
 	@GetMapping("/pegarTodasPromocoes")
 	public List<Promocao> pegarTodosProdutos() {
 		return servicoPromocao.encontrarTodos();
 	}
 	
+	@ApiOperation("Criar nova promoção")
 	@PostMapping("/criarPromocao")
 	public void criarPacote(@RequestBody Promocao novaPromocao) {
 		servicoPromocao.inserirPromocao(novaPromocao);
 	}
 	
+	@ApiOperation("Atualizar promoção já existente")
 	@PutMapping("/atualizarPromocao")
 	public void atualizarPromocao(@RequestBody Promocao promocaoAtualizada) {
 		servicoPromocao.atualizarPromocao(promocaoAtualizada);

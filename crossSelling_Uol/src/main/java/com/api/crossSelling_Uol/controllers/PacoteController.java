@@ -20,28 +20,36 @@ import com.api.crossSelling_Uol.repositories.ProdutoRepository;
 import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.ProdutoService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/pacotes")
+@Api(value="Pacotes")
 public class PacoteController {
 	@Autowired
 	private PacoteService servicoPacote;
 	
+	@ApiOperation("Pegar pacote existente pelo ID")
 	@GetMapping("/pegarPacote/{id}")
 	public Optional<Pacote> pegarPacote(@PathVariable String id ) {
 		return servicoPacote.encontrarPeloId(id);
 	}
 	
+	@ApiOperation("Pegar todos os pacotes existentes")
 	@GetMapping("/pegarTodosPacotes")
 	public List<Pacote> pegarTodosPacotes() {
 		return servicoPacote.encontrarTodos();
 	}
 	
+	@ApiOperation("Criar novo pacote")
 	@PostMapping("/criarPacote")
 	public void criarPacote(@RequestBody Pacote novoPacote) {
 		servicoPacote.inserirPacote(novoPacote);
 	}
 	
+	@ApiOperation("Atualizar pacote já existente")
 	@PutMapping("/atualizarPacote")
 	public void atualizarPacote(@RequestBody Pacote pacoteAtualizado) {
 		servicoPacote.atualizarPacote(pacoteAtualizado);
