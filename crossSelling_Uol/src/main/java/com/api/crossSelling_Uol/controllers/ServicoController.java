@@ -17,28 +17,36 @@ import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
 import com.api.crossSelling_Uol.services.ServicoService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/servicos")
+@Api(value="Serviços")
 public class ServicoController {
 	@Autowired
 	private ServicoService servicoService;
 	
+	@ApiOperation("Pegar serviço existente pelo ID")
 	@GetMapping("/pegarServico/{id}")
 	public Optional<Servico> pegarServico(@PathVariable String id) {
 		return servicoService.encontrarPeloId(id);
 	}
 	
+	@ApiOperation("Pegar todos os serviços existentes")
 	@GetMapping("/pegarTodosServicos")
 	public List<Servico> pegarTodosServicos() {
 		return servicoService.encontrarTodos();
 	}
 	
+	@ApiOperation("Criar novo serviço")
 	@PostMapping("/criarServico")
 	public void criarServico(@RequestBody Servico novoServico) {
 		servicoService.inserirServico(novoServico);
 	}
 	
+	@ApiOperation("Atualizar serviço já existente")
 	@PutMapping("/atualizarServico")
 	public void atualizarServico(@RequestBody Servico servicoAtualizado) {
 		servicoService.atualizarServico(servicoAtualizado);

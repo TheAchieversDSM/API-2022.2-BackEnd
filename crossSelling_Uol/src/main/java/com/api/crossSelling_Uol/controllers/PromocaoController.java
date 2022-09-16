@@ -20,6 +20,8 @@ import com.api.crossSelling_Uol.repositories.PromocaoRepository;
 import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.PromocaoService;
 
+import io.swagger.annotations.ApiOperation;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/promocoes")

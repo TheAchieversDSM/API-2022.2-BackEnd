@@ -42,8 +42,8 @@ public class PacoteController {
 		servicoPacote.inserirPacote(novoPacote);
 	}
 	
-	@PutMapping("/atualizarProduto")
-	public void atualizarProduto(@RequestBody Pacote pacoteAtualizado) {
+	@PutMapping("/atualizarPacote")
+	public void atualizarPacote(@RequestBody Pacote pacoteAtualizado) {
 		servicoPacote.atualizarPacote(pacoteAtualizado);
 	}
 }
