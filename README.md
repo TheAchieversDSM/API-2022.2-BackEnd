@@ -14,6 +14,22 @@
   <img src="https://img.shields.io/badge/MongoDB-CED4DA?style=for-the-badge&logo=mongodb&logoColor=4EA94B"/>
   <img src="https://img.shields.io/badge/Swagger-CED4DA?style=for-the-badge&logo=Swagger&logoColor=85EA2D" />
 </p>
+ <h3>:gear: Execução do Sistema</h3>
+
+```bash 
+# Baixe o repositório ou clone usando o comando:
+  git clone https://github.com/TheAchieversDSM/API-2022.2-BackEnd
+  
+# Utilize a IDE desejada:
+ (Eclipse, VS Code, etc...)
+
+# Importe a pasta do projeto para sua IDE
+
+# Espere o Maven carregar as dependências do projeto:
+ (Dependências listadas em pom.xml)
+ 
+# Execute o projeto, as Rotas estarão descritas logo abaixo
+```
 
  <h3>:arrows_counterclockwise: Rotas</h3>
   <h4>:computer: Rotas Produtos</h4>
