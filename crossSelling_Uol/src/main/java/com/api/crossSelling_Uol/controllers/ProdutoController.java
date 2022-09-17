@@ -36,6 +36,12 @@ public class ProdutoController {
 		return servicoProduto.encontrarPeloId(id);
 	}
 	
+	@ApiOperation("Pegar todos os produtos existentes exceto os complementos do produto informado")
+	@GetMapping("/pegarTodosExcetoComplementos/{id}")
+	public List<Produto> pegarTodosExcetoComplementos(@PathVariable String id) {
+		return servicoProduto.encontrarExcetoComplementos(id);
+	}
+	
 	@ApiOperation("Pegar todos os produtos existentes")
 	@GetMapping("/pegarTodosProdutos")
 	public List<Produto> pegarTodosProdutos() {

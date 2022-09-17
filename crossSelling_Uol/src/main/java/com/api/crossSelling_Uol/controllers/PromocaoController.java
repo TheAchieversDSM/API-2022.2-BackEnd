@@ -31,7 +31,7 @@ public class PromocaoController {
 	@Autowired
 	private PromocaoService servicoPromocao;
 	
-	@ApiOperation("Pegar promocao existente pelo ID")
+	@ApiOperation("Pegar promoção existente pelo ID")
 	@GetMapping("/pegarPromocao/{id}")
 	public Optional<Promocao> pegarPromocao(@PathVariable String id ) {
 		return servicoPromocao.encontrarPeloId(id);

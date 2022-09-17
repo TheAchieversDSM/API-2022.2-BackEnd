@@ -22,8 +22,26 @@ public class ProdutoService {
 		return bancoProduto.findAll();
 	}
 	
-	public Produto inserirProduto(Produto novoProduto) {
-		return bancoProduto.save(novoProduto);
+	public List<Produto> encontrarExcetoComplementos(String id){
+		Produto alvo = bancoProduto.findById(id).orElse(null);
+		List<Produto> produtos = bancoProduto.findAll();
+		for (int i = 0; i < alvo.getComplementares().size() ; i++) {
+			Produto complemento = bancoProduto.findById(alvo.getComplementares().get(i).getId()).orElse(null); 
+			produtos.remove(complemento);
+		}
+		produtos.remove(alvo);
+		return produtos;
+	}
+	
+	public void inserirProduto(Produto novoProduto) {
+		if(novoProduto.getComplementares().size() > 0) {
+			for (int i = 0; i < novoProduto.getComplementares().size() ; i++) {
+					Produto complemento = bancoProduto.findById(novoProduto.getComplementares().get(i).getId()).orElse(null); 
+					complemento.getComplementares().add(novoProduto);
+					bancoProduto.save(complemento);
+				}
+		}
+		bancoProduto.save(novoProduto);
 	}
 	
 	public void atualizarProduto(Produto produtoAtualizado) {
