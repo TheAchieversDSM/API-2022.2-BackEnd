@@ -17,7 +17,7 @@
 
  <h3>:arrows_counterclockwise: Rotas</h3>
   <h4>:computer: Rotas Produtos</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/o8JSa4N.png" />
+  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/Gtr3lsl.png" />
   
   <h4>:bellhop_bell: Rotas Serviços</h4>
   <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/QK4nKIM.png" />
