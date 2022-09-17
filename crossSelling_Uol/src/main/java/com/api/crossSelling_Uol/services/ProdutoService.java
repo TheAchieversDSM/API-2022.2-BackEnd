@@ -36,8 +36,11 @@ public class ProdutoService {
 	public void inserirProduto(Produto novoProduto) {
 		if(novoProduto.getComplementares().size() > 0) {
 			for (int i = 0; i < novoProduto.getComplementares().size() ; i++) {
-					Produto complemento = bancoProduto.findById(novoProduto.getComplementares().get(i).getId()).orElse(null); 
-					complemento.getComplementares().add(novoProduto);
+					Produto produtoAdicionar = new Produto();
+					produtoAdicionar.setId(novoProduto.getId());
+					produtoAdicionar.setNome(novoProduto.getNome());
+					Produto complemento = bancoProduto.findById(novoProduto.getComplementares().get(i).getId()).orElse(null); 				
+					complemento.getComplementares().add(produtoAdicionar);
 					bancoProduto.save(complemento);
 				}
 		}
