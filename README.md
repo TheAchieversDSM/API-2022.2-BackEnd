@@ -7,15 +7,12 @@
  <h3>:hammer_and_wrench: Ferramentas e Tecnologias</h3>
  
  <p align="center">
-  <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white" />
-  <img src="https://img.shields.io/badge/Java-2C2255?style=for-the-badge&logo=java&logoColor=ff8000" />
-  <img src="https://img.shields.io/badge/Insomnia-5849be?style=for-the-badge&logo=Insomnia&logoColor=white" />
-  <br/>
-  <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white" />
-  <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/>
-  
-
+  <img src="https://img.shields.io/badge/Eclipse-CED4DA?style=for-the-badge&logo=eclipse&logoColor=2C2255" />
+  <img src="https://img.shields.io/badge/Java-CED4DA?style=for-the-badge&logo=java&logoColor=2C2255" />
+  <img src="https://img.shields.io/badge/Insomnia-CED4DA?style=for-the-badge&logo=Insomnia&logoColor=5849be" />
+  <img src="https://img.shields.io/badge/Spring-CED4DA?style=for-the-badge&logo=spring&logoColor=6DB33F"/>
+  <img src="https://img.shields.io/badge/MongoDB-CED4DA?style=for-the-badge&logo=mongodb&logoColor=4EA94B"/>
+  <img src="https://img.shields.io/badge/Swagger-CED4DA?style=for-the-badge&logo=Swagger&logoColor=85EA2D" />
 </p>
 
  <h3>:arrows_counterclockwise: Rotas</h3>
