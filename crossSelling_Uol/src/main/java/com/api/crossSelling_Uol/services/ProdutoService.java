@@ -34,17 +34,20 @@ public class ProdutoService {
 	}
 	
 	public void inserirProduto(Produto novoProduto) {
+		String produtoId = bancoProduto.save(novoProduto).getId();
+
 		if(novoProduto.getComplementares().size() > 0) {
 			for (int i = 0; i < novoProduto.getComplementares().size() ; i++) {
 					Produto produtoAdicionar = new Produto();
-					produtoAdicionar.setId(novoProduto.getId());
+					produtoAdicionar.setId(produtoId);
 					produtoAdicionar.setNome(novoProduto.getNome());
+					System.out.print(produtoAdicionar);
 					Produto complemento = bancoProduto.findById(novoProduto.getComplementares().get(i).getId()).orElse(null); 				
 					complemento.getComplementares().add(produtoAdicionar);
 					bancoProduto.save(complemento);
 				}
 		}
-		bancoProduto.save(novoProduto);
+		
 	}
 	
 	public void atualizarProduto(Produto produtoAtualizado) {
