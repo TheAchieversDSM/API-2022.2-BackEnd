@@ -1,5 +1,6 @@
 package com.api.crossSelling_Uol.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,11 +22,16 @@ public class ServicoService {
 	public List<Servico> encontrarTodos(){
 		return bancoServico.findAll();
 	}
-
+	
+	public List<Servico> encontrarServicosPeloProduto(String id){
+		return bancoServico.findServicosByProd(id);
+		
+	}
+	
 	public Servico inserirServico(Servico novoServico) {
 		return bancoServico.save(novoServico);
 	}
-
+	
 	public void atualizarServico(Servico servicoAtualizado) {
 		bancoServico.save(servicoAtualizado);
 	}

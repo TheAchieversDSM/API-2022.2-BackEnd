@@ -40,6 +40,12 @@ public class ServicoController {
 		return servicoService.encontrarTodos();
 	}
 	
+	@ApiOperation("Pegar todos os serviços existentes")
+	@GetMapping("/pegarTodosServicosPeloProduto/{id}")
+	public List<Servico> pegarTodosServicosPeloProduto(@PathVariable String id) {
+		return servicoService.encontrarServicosPeloProduto(id);
+	}
+	
 	@ApiOperation("Criar novo serviço")
 	@PostMapping("/criarServico")
 	public void criarServico(@RequestBody Servico novoServico) {

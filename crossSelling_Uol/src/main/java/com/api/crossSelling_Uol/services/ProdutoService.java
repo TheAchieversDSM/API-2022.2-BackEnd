@@ -18,9 +18,11 @@ public class ProdutoService {
 		return bancoProduto.findById(id);
 	}
 	
+	
 	public List<Produto> encontrarTodos(){
 		return bancoProduto.findAll();
 	}
+	
 	
 	public List<Produto> encontrarExcetoComplementos(String id){
 		Produto alvo = bancoProduto.findById(id).orElse(null);
