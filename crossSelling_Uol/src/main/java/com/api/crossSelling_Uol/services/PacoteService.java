@@ -1,5 +1,6 @@
 package com.api.crossSelling_Uol.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Produto;
+import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.PacoteRepository;
 
 @Service
@@ -18,6 +20,16 @@ public class PacoteService {
 	
 	public Optional<Pacote> encontrarPeloId(String id) {
 		return bancoPacote.findById(id);
+	}
+	
+	public List<Pacote> encontrarPacotesPeloServico(List<Servico> servicos){
+		List<Pacote> pacotes = new ArrayList();
+		for (int i = 0; i < servicos.size() ; i++) {
+			pacotes.addAll(bancoPacote.findPacotesByServ(servicos.get(i).getId()));
+		}
+		
+		return pacotes;
+		
 	}
 	
 	public List<Pacote> encontrarTodos(){
