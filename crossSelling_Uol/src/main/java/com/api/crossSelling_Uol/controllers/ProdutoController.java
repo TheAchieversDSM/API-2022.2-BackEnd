@@ -65,4 +65,10 @@ public class ProdutoController {
 	public void atualizarComplementos(@RequestBody List<Produto> complemento, @PathVariable String id ) {
 		servicoProduto.atualizarComplementos(complemento, id);
 	}
+	
+	@ApiOperation("Pegar todos os complementares de um produto")
+	@GetMapping("/todosComplementos/{id}")
+	public List<Produto> pegarComplementos(@PathVariable String id )  {
+		return servicoProduto.pegarComplementos(id);
+	}
 }
