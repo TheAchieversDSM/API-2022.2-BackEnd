@@ -40,7 +40,7 @@ public class ServicoController {
 		return servicoService.encontrarTodos();
 	}
 	
-	@ApiOperation("Pegar todos os serviços existentes")
+	@ApiOperation("Pegar todos os serviços pelos produtos que o compoem")
 	@GetMapping("/pegarTodosServicosPeloProduto/{id}")
 	public List<Servico> pegarTodosServicosPeloProduto(@PathVariable String id) {
 		return servicoService.encontrarServicosPeloProduto(id);

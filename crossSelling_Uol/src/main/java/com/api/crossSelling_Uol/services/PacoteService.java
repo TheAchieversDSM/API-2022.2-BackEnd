@@ -22,6 +22,10 @@ public class PacoteService {
 		return bancoPacote.findById(id);
 	}
 	
+	public List<Pacote> encontrarTodos(){
+		return bancoPacote.findAll();
+	}
+	
 	public List<Pacote> encontrarPacotesPeloServico(List<Servico> servicos){
 		List<Pacote> pacotes = new ArrayList();
 		for (int i = 0; i < servicos.size() ; i++) {
@@ -30,10 +34,6 @@ public class PacoteService {
 		
 		return pacotes;
 		
-	}
-	
-	public List<Pacote> encontrarTodos(){
-		return bancoPacote.findAll();
 	}
 	
 	public Pacote inserirPacote(Pacote novoPacote) {

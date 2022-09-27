@@ -44,7 +44,7 @@ public class PacoteController {
 		return servicoPacote.encontrarTodos();
 	}
 	
-	@ApiOperation("Pegar todos os serviços existentes")
+	@ApiOperation("Pegar todos os pacotes pelos serviços que o compoem")
 	@PostMapping("/pegarTodosPacotesPeloServico")
 	public List<Pacote> pegarTodosPacotesPeloServico(@RequestBody List<Servico> servicos){
 		return servicoPacote.encontrarPacotesPeloServico(servicos);

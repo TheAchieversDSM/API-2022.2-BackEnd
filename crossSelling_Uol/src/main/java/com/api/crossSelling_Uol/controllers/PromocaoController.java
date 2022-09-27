@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Promocao;
+import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.PacoteRepository;
 import com.api.crossSelling_Uol.repositories.PromocaoRepository;
 import com.api.crossSelling_Uol.services.PacoteService;
@@ -41,6 +42,12 @@ public class PromocaoController {
 	@GetMapping("/pegarTodasPromocoes")
 	public List<Promocao> pegarTodosProdutos() {
 		return servicoPromocao.encontrarTodos();
+	}
+	
+	@ApiOperation("Pegar todos os pacotes pelos serviços que o compoem")
+	@PostMapping("/pegarTodasPromocoesPeloPacote")
+	public List<Promocao> pegarTodosPacotesPeloServico(@RequestBody List<Pacote> pacotes){
+		return servicoPromocao.encontrarPacotesPeloServico(pacotes);
 	}
 	
 	@ApiOperation("Criar nova promoção")
