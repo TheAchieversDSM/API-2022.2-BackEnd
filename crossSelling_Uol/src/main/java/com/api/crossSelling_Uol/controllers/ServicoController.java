@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
 import com.api.crossSelling_Uol.services.ServicoService;
@@ -57,5 +58,18 @@ public class ServicoController {
 	public void atualizarServico(@RequestBody Servico servicoAtualizado) {
 		servicoService.atualizarServico(servicoAtualizado);
 	}
+	
+	@ApiOperation("Pegar todos os serviços obrigatórios")
+	@GetMapping("/TodosServicosObrigatorios/{id}")
+	public List<Servico> pegarServicoObrigatorio(String prodObrigatorio) {
+		 return servicoService.pegarServicoObrigatorio(prodObrigatorio);
+	}
+	
+	@ApiOperation("Criar serviço")
+	@PostMapping("/criarServicoObrigatorio")
+	public void criarServicoObrigatorio(@RequestBody Servico novoServicoObrigatorio) {
+		servicoService.inserirServicoObrigatorio(novoServicoObrigatorio);
+	}
+	
 	
 }

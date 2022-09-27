@@ -6,7 +6,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
 
@@ -35,4 +37,14 @@ public class ServicoService {
 	public void atualizarServico(Servico servicoAtualizado) {
 		bancoServico.save(servicoAtualizado);
 	}
+	
+	public List<Servico> pegarServicoObrigatorio (String id) {
+		Servico obrigatorio = bancoServico.findById(id).orElse(null);
+		return obrigatorio.getServicosObrigatorios();
+	}
+	
+	public Servico inserirServicoObrigatorio (Servico novoServicoObrigatorio) {
+		return bancoServico.save(novoServicoObrigatorio);
+	}
+
 }

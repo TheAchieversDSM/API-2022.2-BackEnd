@@ -67,7 +67,6 @@ public class ProdutoService {
 	
 	public List<Produto> pegarComplementos(@PathVariable String id){
 		Produto complementar = bancoProduto.findById(id).orElse(null);
-		System.out.print(complementar.getComplementares());
 		return complementar.getComplementares();
 	}
 	
