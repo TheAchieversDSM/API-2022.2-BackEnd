@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Servico;
-import com.api.crossSelling_Uol.repositories.ServicoRepository;
 import com.api.crossSelling_Uol.services.ServicoService;
 
 import io.swagger.annotations.Api;
@@ -40,10 +39,22 @@ public class ServicoController {
 		return servicoService.encontrarTodos();
 	}
 	
+	@ApiOperation("Pegar todos os serviços existentes exceto os complementos do serviço informado")
+	@GetMapping("/pegarTodosExcetoComplementos/{id}")
+	public List<Servico> pegarTodosExcetoComplementos(@PathVariable String id) {
+		return servicoService.encontrarExcetoComplementos(id);
+	}
+	
 	@ApiOperation("Pegar todos os serviços pelos produtos que o compoem")
 	@GetMapping("/pegarTodosServicosPeloProduto/{id}")
 	public List<Servico> pegarTodosServicosPeloProduto(@PathVariable String id) {
 		return servicoService.encontrarServicosPeloProduto(id);
+	}
+	
+	@ApiOperation("Pegar todos os complementares de um serviço")
+	@GetMapping("/todosComplementos/{id}")
+	public List<Servico> pegarComplementos(@PathVariable String id )  {
+		return servicoService.pegarComplementos(id);
 	}
 	
 	@ApiOperation("Criar novo serviço")
@@ -56,6 +67,12 @@ public class ServicoController {
 	@PutMapping("/atualizarServico")
 	public void atualizarServico(@RequestBody Servico servicoAtualizado) {
 		servicoService.atualizarServico(servicoAtualizado);
+	}
+	
+	@ApiOperation("Adicionar novo serviço complementar a um serviço já existente")
+	@PutMapping("/atualizarComplementos/{id}")
+	public void atualizarComplementos(@RequestBody List<Servico> complemento, @PathVariable String id ) {
+		servicoService.atualizarComplementos(complemento, id);
 	}
 	
 }
