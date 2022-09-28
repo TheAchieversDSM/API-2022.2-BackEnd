@@ -17,5 +17,6 @@ public class Servico {
 	private String preco;
 	private String descricao;
 	private List<Produto> produtos = new ArrayList<>();
+	private List<Servico> complementares = new ArrayList<>();
 
 }

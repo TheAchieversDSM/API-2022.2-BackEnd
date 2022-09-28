@@ -35,29 +35,17 @@ public class ProdutoController {
 	public Optional<Produto> pegarProduto(@PathVariable String id ) {
 		return servicoProduto.encontrarPeloId(id);
 	}
-	
-	@ApiOperation("Pegar todos os produtos existentes exceto os complementos do produto informado")
-	@GetMapping("/pegarTodosExcetoComplementos/{id}")
-	public List<Produto> pegarTodosExcetoComplementos(@PathVariable String id) {
-		return servicoProduto.encontrarExcetoComplementos(id);
-	}
-	
-	@ApiOperation("Pegar todos os produtos existentes")
-	@GetMapping("/pegarTodosProdutos")
-	public List<Produto> pegarTodosProdutos() {
-		return servicoProduto.encontrarTodos();
-	}
-	
+	/*
 	@ApiOperation("Criar novo produto")
 	@PostMapping("/criarProduto")
 	public void criarProduto(@RequestBody Produto novoProduto) {
 		servicoProduto.inserirProduto(novoProduto);
 	}
 	
-	@ApiOperation("Atualizar produto já existente")
-	@PutMapping("/atualizarProduto")
-	public void atualizarProduto(@RequestBody Produto produtoAtualizado) {
-		servicoProduto.atualizarProduto(produtoAtualizado);
+	@ApiOperation("Pegar todos os produtos existentes exceto os complementos do produto informado")
+	@GetMapping("/pegarTodosExcetoComplementos/{id}")
+	public List<Produto> pegarTodosExcetoComplementos(@PathVariable String id) {
+		return servicoProduto.encontrarExcetoComplementos(id);
 	}
 	
 	@ApiOperation("Adicionar novo produto complementar a um produto já existente")
@@ -71,4 +59,20 @@ public class ProdutoController {
 	public List<Produto> pegarComplementos(@PathVariable String id )  {
 		return servicoProduto.pegarComplementos(id);
 	}
+	*/
+	@ApiOperation("Pegar todos os produtos existentes")
+	@GetMapping("/pegarTodosProdutos")
+	public List<Produto> pegarTodosProdutos() {
+		return servicoProduto.encontrarTodos();
+	}
+	
+
+	
+	@ApiOperation("Atualizar produto já existente")
+	@PutMapping("/atualizarProduto")
+	public void atualizarProduto(@RequestBody Produto produtoAtualizado) {
+		servicoProduto.atualizarProduto(produtoAtualizado);
+	}
+	
+
 }

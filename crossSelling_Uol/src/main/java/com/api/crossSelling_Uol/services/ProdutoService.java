@@ -26,7 +26,7 @@ public class ProdutoService {
 	}
 	
 	
-	public List<Produto> encontrarExcetoComplementos(String id){
+	/*public List<Produto> encontrarExcetoComplementos(String id){
 		Produto alvo = bancoProduto.findById(id).orElse(null);
 		List<Produto> produtos = bancoProduto.findAll();
 		for (int i = 0; i < alvo.getComplementares().size() ; i++) {
@@ -36,7 +36,8 @@ public class ProdutoService {
 		produtos.remove(alvo);
 		return produtos;
 	}
-	
+	*/
+	/*
 	public void inserirProduto(Produto novoProduto) {
 		String produtoId = bancoProduto.save(novoProduto).getId();
 
@@ -53,10 +54,13 @@ public class ProdutoService {
 		}
 		
 	}
+	*/
+
 	
 	public void atualizarProduto(Produto produtoAtualizado) {
 		bancoProduto.save(produtoAtualizado);
 	}
+	/*
 	
 	public void atualizarComplementos( List<Produto> complemento, String id ) {
 		Produto alvo = bancoProduto.findById(id).orElse(null);
@@ -70,5 +74,6 @@ public class ProdutoService {
 		System.out.print(complementar.getComplementares());
 		return complementar.getComplementares();
 	}
+	*/
 	
 }

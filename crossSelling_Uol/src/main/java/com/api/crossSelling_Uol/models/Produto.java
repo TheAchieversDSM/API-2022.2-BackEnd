@@ -17,5 +17,4 @@ public class Produto {
 	private String preco;
 	private String descricao;
 	private String categoria;
-	private List<Produto> complementares = new ArrayList<>() ;
 }
