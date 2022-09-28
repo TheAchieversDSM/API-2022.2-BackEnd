@@ -61,14 +61,14 @@ public class ServicoController {
 	
 	@ApiOperation("Pegar todos os serviços obrigatórios")
 	@GetMapping("/TodosServicosObrigatorios/{id}")
-	public List<Servico> pegarServicoObrigatorio(String prodObrigatorio) {
-		 return servicoService.pegarServicoObrigatorio(prodObrigatorio);
+	public List<Servico> pegarServicoObrigatorio(String servicoObrigatorio) {
+		 return servicoService.pegarServicoObrigatorio(servicoObrigatorio);
 	}
 	
-	@ApiOperation("Criar serviço")
-	@PostMapping("/criarServicoObrigatorio")
-	public void criarServicoObrigatorio(@RequestBody Servico novoServicoObrigatorio) {
-		servicoService.inserirServicoObrigatorio(novoServicoObrigatorio);
+	@ApiOperation("Criar serviço obrigatório")
+	@PostMapping("/criarServicoObrigatorio/{id}")
+	public void inserirServicoObrigatorio(@RequestBody Servico novoServicoObrigatorio, @PathVariable String id){
+		servicoService.inserirServicoObrigatorio(novoServicoObrigatorio, id);
 	}
 	
 	

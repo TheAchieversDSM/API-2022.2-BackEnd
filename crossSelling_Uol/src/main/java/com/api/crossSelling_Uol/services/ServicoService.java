@@ -43,8 +43,10 @@ public class ServicoService {
 		return obrigatorio.getServicosObrigatorios();
 	}
 	
-	public Servico inserirServicoObrigatorio (Servico novoServicoObrigatorio) {
-		return bancoServico.save(novoServicoObrigatorio);
+	public void inserirServicoObrigatorio (Servico novoServicoObrigatorio, String id) {
+		Servico alvo = bancoServico.findById(id).orElse(null);
+		alvo.getServicosObrigatorios().add(novoServicoObrigatorio);
+		bancoServico.save(alvo);
 	}
 
 }
