@@ -60,7 +60,7 @@ public class ServicoController {
 	}
 	
 	@ApiOperation("Pegar todos os serviços obrigatórios")
-	@GetMapping("/TodosServicosObrigatorios/{id}")
+	@GetMapping("/todosServicosObrigatorios/{id}")
 	public List<Servico> pegarServicoObrigatorio(String servicoObrigatorio) {
 		 return servicoService.pegarServicoObrigatorio(servicoObrigatorio);
 	}
@@ -71,5 +71,10 @@ public class ServicoController {
 		servicoService.inserirServicoObrigatorio(novoServicoObrigatorio, id);
 	}
 	
+	@ApiOperation("Pegar todos os serviços pela categoria")
+	@GetMapping("/todosServicosPelaCategoria/{categoria}")
+	public List<Servico> pegarServicoPelaCategoria(@PathVariable String categoria) {
+		 return servicoService.pegarServicosPelaCategoria(categoria);
+	}
 	
 }
