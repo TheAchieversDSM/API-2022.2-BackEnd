@@ -13,13 +13,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
+import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.ServicoService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+
 
 @CrossOrigin
 @RestController
@@ -28,6 +31,15 @@ import io.swagger.annotations.ApiOperation;
 public class ServicoController {
 	@Autowired
 	private ServicoService servicoService;
+	
+	@Autowired
+	private PacoteService pacoteService;
+	@ApiOperation("Pegar pacotes pelo serviço")
+	@PostMapping("/pegarPacotes")
+	public List<Pacote> pegarTodosPacotesPeloServico(@RequestBody List<Servico> servicos){
+		return pacoteService.encontrarPacotesPeloServico(servicos);
+	}
+	
 	
 	@ApiOperation("Pegar serviço existente pelo ID")
 	@GetMapping("/pegarServico/{id}")
