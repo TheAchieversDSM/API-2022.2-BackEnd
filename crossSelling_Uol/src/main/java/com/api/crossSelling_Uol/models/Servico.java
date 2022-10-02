@@ -20,5 +20,6 @@ public class Servico {
 	private String categoria;
 	private List <Servico> servicosObrigatorios = new ArrayList<>();
 	private List <Produto> produtos = new ArrayList<>();
+	private List<Servico> complementares = new ArrayList<>();
 
 }
