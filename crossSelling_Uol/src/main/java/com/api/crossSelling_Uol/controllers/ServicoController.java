@@ -40,6 +40,14 @@ public class ServicoController {
 		return pacoteService.encontrarPacotesPeloServico(servicos);
 	}
 	
+	@Autowired
+	private PacoteService promocaoService;
+	@ApiOperation("Pegar promoções pelo serviço")
+	@PostMapping("/pegarPromocoes")
+	public List<Pacote> pegarTodasPromocoesPeloServico(@RequestBody List<Servico> servicos){
+		return promocaoService.encontrarPacotesPeloServico(servicos); // pegar função correta //
+	}
+	
 	
 	@ApiOperation("Pegar serviço existente pelo ID")
 	@GetMapping("/pegarServico/{id}")
