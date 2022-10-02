@@ -32,5 +32,4 @@ public class PromocaoService {
 		bancoPromocao.save(promocaoAtualizada);
 	}
 	
-	
 }

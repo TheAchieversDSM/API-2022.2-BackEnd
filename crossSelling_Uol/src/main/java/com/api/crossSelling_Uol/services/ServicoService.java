@@ -48,5 +48,9 @@ public class ServicoService {
 		alvo.getServicosObrigatorios().add(novoServicoObrigatorio);
 		bancoServico.save(alvo);
 	}
+	
+	public List<Servico> pegarServicosPelaCategoria (String categoria) {
+	 return	bancoServico.findServicosByCate(categoria);
+	}
 
 }
