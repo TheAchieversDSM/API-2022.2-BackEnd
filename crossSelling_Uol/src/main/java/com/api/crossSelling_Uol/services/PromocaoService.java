@@ -22,18 +22,17 @@ public class PromocaoService {
 		return bancoPromocao.findById(id);
 	}
 	
-	public List<Promocao> encontrarTodos(){
+	public List<Promocao> encontrarTodas(){
 		return bancoPromocao.findAll();
 	}
 	
-	public List<Promocao> encontrarPacotesPeloServico(List<Pacote> pacotes){
+	public List<Promocao> encontrarPromocoesPeloServico(List<Pacote> pacotes){
 		List<Promocao> promocoes = new ArrayList();
 		for (int i = 0; i < pacotes.size() ; i++) {
 			promocoes.addAll(bancoPromocao.findPromocoesByPack(pacotes.get(i).getId()));
 		}
 		return promocoes;	
 	}
-	
 	
 	public Promocao inserirPromocao(Promocao novaPromocao) {
 		return bancoPromocao.save(novaPromocao);

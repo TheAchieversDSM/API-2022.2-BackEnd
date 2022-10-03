@@ -40,15 +40,15 @@ public class PromocaoController {
 	
 	@ApiOperation("Pegar todas as promoções existentes")
 	@GetMapping("/pegarTodasPromocoes")
-	public List<Promocao> pegarTodosProdutos() {
-		return servicoPromocao.encontrarTodos();
+	public List<Promocao> pegarTodasPromocoes() {
+		return servicoPromocao.encontrarTodas(); 
 	}
 	
-	@ApiOperation("Pegar todos os pacotes pelos serviços que o compoem")
-	@PostMapping("/pegarTodasPromocoesPeloPacote")
+	/* @ApiOperation("Pegar todos as promoções pelos OFERTAS que a compoem")
+	@PostMapping("/pegarTodasPromocoesPelaOferta")
 	public List<Promocao> pegarTodosPacotesPeloServico(@RequestBody List<Pacote> pacotes){
 		return servicoPromocao.encontrarPacotesPeloServico(pacotes);
-	}
+	}  Precisamos criar OFERTA ainda */
 	
 	@ApiOperation("Criar nova promoção")
 	@PostMapping("/criarPromocao")
