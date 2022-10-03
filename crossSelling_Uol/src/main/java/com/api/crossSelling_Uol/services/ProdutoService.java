@@ -30,18 +30,5 @@ public class ProdutoService {
 		bancoProduto.save(produtoAtualizado);
 	}
 
-	
-	public void atualizarComplementos( List<Produto> complemento, String id ) {
-		Produto alvo = bancoProduto.findById(id).orElse(null);
-		alvo.getComplementares().addAll(complemento);
-		bancoProduto.save(alvo);
-		
-	}
-	
-	public List<Produto> pegarComplementos(@PathVariable String id){
-		Produto complementar = bancoProduto.findById(id).orElse(null);
-		return complementar.getComplementares();
-	}
-	
 
 }

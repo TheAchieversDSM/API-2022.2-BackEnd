@@ -107,6 +107,8 @@ public class ServicoController {
 	@GetMapping("/todosServicosPelaCategoria/{categoria}")
 	public List<Servico> pegarServicoPelaCategoria(@PathVariable String categoria) {
 		 return servicoService.pegarServicosPelaCategoria(categoria);
+	}
+	
 	@ApiOperation("Adicionar novo serviço complementar a um serviço já existente")
 	@PutMapping("/atualizarComplementos/{id}")
 	public void atualizarComplementos(@RequestBody List<Servico> complemento, @PathVariable String id ) {
