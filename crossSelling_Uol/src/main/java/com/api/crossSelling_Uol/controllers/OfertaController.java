@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,12 +40,25 @@ public class OfertaController {
 		return servicoOferta.encontrarTodas();
 	}
 	
+	@ApiOperation("Pegar oferta existente pelo ID")
+	@GetMapping("/pegarOferta/{id}")
+	public Optional<Oferta> pegarOferta(@PathVariable String id ) {
+		return servicoOferta.encontrarPeloId(id);
+	}
+	
 
 	@ApiOperation("Criar nova oferta")
 	@PostMapping("/criarOferta")
 	public void inserirOferta(@RequestBody Oferta novaOferta) {
 		servicoOferta.inserirOferta(novaOferta);
 	}
+	
+	@ApiOperation("Atualizar oferta já existente")
+	@PutMapping("/atualizarOferta")
+	public void atualizarOferta(@RequestBody Oferta ofertaAtualizado) {
+		servicoOferta.atualizarOferta(ofertaAtualizado);
+	}
+	
 	
 	
 	

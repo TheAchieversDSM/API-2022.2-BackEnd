@@ -25,4 +25,13 @@ public class OfertaService {
 		return bancoOferta.findAll();
 	}
 	
+	public Optional<Oferta> encontrarPeloId(String id) {
+		return bancoOferta.findById(id);
+	}
+	
+	public void atualizarOferta(Oferta ofertaAtualizada) {
+		bancoOferta.save(ofertaAtualizada);
+	}
+
+	
 }
