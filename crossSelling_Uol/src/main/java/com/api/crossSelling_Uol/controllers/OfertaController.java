@@ -7,10 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Oferta;
+import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.services.OfertaService;
 import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.PromocaoService;
@@ -37,7 +40,11 @@ public class OfertaController {
 	}
 	
 
-	
+	@ApiOperation("Criar nova oferta")
+	@PostMapping("/criarOferta")
+	public void inserirOferta(@RequestBody Oferta novaOferta) {
+		servicoOferta.inserirOferta(novaOferta);
+	}
 	
 	
 	

@@ -17,7 +17,7 @@ public class OfertaService {
 	@Autowired
 	private OfertaRepository bancoOferta;
 	
-	public void  inserirOferta(Oferta novaOferta) {
+	public void inserirOferta(Oferta novaOferta) {
 		bancoOferta.save(novaOferta);
 	}	
 	
