@@ -46,7 +46,6 @@ public class OfertaController {
 		return servicoOferta.encontrarPeloId(id);
 	}
 	
-
 	@ApiOperation("Criar nova oferta")
 	@PostMapping("/criarOferta")
 	public void inserirOferta(@RequestBody Oferta novaOferta) {
@@ -58,9 +57,6 @@ public class OfertaController {
 	public void atualizarOferta(@RequestBody Oferta ofertaAtualizado) {
 		servicoOferta.atualizarOferta(ofertaAtualizado);
 	}
-	
-	
-	
-	
+
 	
 }

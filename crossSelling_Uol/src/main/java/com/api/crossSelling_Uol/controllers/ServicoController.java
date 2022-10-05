@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.crossSelling_Uol.models.Oferta;
 import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.models.Promocao;
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
+import com.api.crossSelling_Uol.services.OfertaService;
 import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.PromocaoService;
 import com.api.crossSelling_Uol.services.ServicoService;
@@ -42,13 +44,14 @@ public class ServicoController {
 		return pacoteService.encontrarPacotesPeloServico(servicos);
 	}
 	
-	/*@Autowired
-	private PromocaoService promocaoService;
-	@ApiOperation("Pegar promoções pelo serviço")
-	@PostMapping("/pegarPromocoes")
-	public List<Promocao> pegarTodasPromocoesPeloServico(@RequestBody List<Servico> servicos){
-		return promocaoService.encontrarPromocoesPeloServico(servicos); // pegar função correta //
-	} */
+	@Autowired
+	private OfertaService ofertaService;
+	
+	@ApiOperation("Pegar ofertas pelo serviço")
+	@PostMapping("/pegarOfertas")
+	public List<Oferta> pegarTodasOfertasPeloServico(@RequestBody List<Servico> servicos){
+		return ofertaService.encontrarOfertasPeloServico(servicos); // pegar função correta //
+	}
 	
 	
 	@ApiOperation("Pegar serviço existente pelo ID")

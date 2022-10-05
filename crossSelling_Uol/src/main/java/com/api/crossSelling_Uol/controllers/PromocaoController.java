@@ -1,3 +1,4 @@
+
 package com.api.crossSelling_Uol.controllers;
 
 import java.util.List;
@@ -44,11 +45,11 @@ public class PromocaoController {
 		return servicoPromocao.encontrarTodas(); 
 	}
 	
-	/* @ApiOperation("Pegar todos as promoções pelos OFERTAS que a compoem")
+	/*@ApiOperation("Pegar todos as promoções pelas OFERTAS que a compoem")
 	@PostMapping("/pegarTodasPromocoesPelaOferta")
 	public List<Promocao> pegarTodosPacotesPeloServico(@RequestBody List<Pacote> pacotes){
 		return servicoPromocao.encontrarPacotesPeloServico(pacotes);
-	}  Precisamos criar OFERTA ainda */
+	}*/
 	
 	@ApiOperation("Criar nova promoção")
 	@PostMapping("/criarPromocao")
