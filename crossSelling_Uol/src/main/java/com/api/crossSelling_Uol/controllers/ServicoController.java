@@ -50,7 +50,16 @@ public class ServicoController {
 	@ApiOperation("Pegar ofertas pelo serviço")
 	@PostMapping("/pegarOfertas")
 	public List<Oferta> pegarTodasOfertasPeloServico(@RequestBody List<Servico> servicos){
-		return ofertaService.encontrarOfertasPeloServico(servicos); // pegar função correta //
+		return ofertaService.encontrarOfertasPeloServico(servicos); 
+	}
+	
+	@Autowired
+	private PromocaoService promocaoService;
+	
+	@ApiOperation("Pegar promoções pelo serviço")
+	@PostMapping("/pegarPromocoes")
+	public List<Promocao> pegarTodasPromocoesPeloServico(@RequestBody List<Servico> servicos){
+		return promocaoService.encontrarPromocoesPeloServico(servicos);
 	}
 	
 	
