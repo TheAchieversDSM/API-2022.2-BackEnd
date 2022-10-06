@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.api.crossSelling_Uol.models.Oferta;
 import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Promocao;
 import com.api.crossSelling_Uol.models.Servico;
@@ -18,20 +19,26 @@ public class PromocaoService {
 	@Autowired
 	private PromocaoRepository bancoPromocao;
 	
+	@Autowired
+	private OfertaService ofertaService;
+	
 	public Optional<Promocao> encontrarPeloId(String id) {
 		return bancoPromocao.findById(id);
 	}
 	
-	public List<Promocao> encontrarTodos(){
+	public List<Promocao> encontrarTodas(){
 		return bancoPromocao.findAll();
 	}
 	
-	public List<Promocao> encontrarPacotesPeloServico(List<Pacote> pacotes){
+	public List<Promocao> encontrarPromocoesPeloServico(List<Servico> servicos){
+		List<Oferta> ofertas = ofertaService.encontrarOfertasPeloServico(servicos);
+		System.out.print(ofertas);
 		List<Promocao> promocoes = new ArrayList();
-		for (int i = 0; i < pacotes.size() ; i++) {
-			promocoes.addAll(bancoPromocao.findPromocoesByPack(pacotes.get(i).getId()));
+		for (int i = 0; i < ofertas.size() ; i++) {
+			promocoes.addAll(bancoPromocao.findPromocoesByPack(ofertas.get(i).getId()));
+			System.out.print(promocoes.get(i));
 		}
-		return promocoes;	
+		return promocoes; 
 	}
 	
 	

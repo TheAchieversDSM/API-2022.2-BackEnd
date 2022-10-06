@@ -13,11 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.crossSelling_Uol.models.Oferta;
 import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Produto;
+import com.api.crossSelling_Uol.models.Promocao;
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
+import com.api.crossSelling_Uol.services.OfertaService;
 import com.api.crossSelling_Uol.services.PacoteService;
+import com.api.crossSelling_Uol.services.PromocaoService;
 import com.api.crossSelling_Uol.services.ServicoService;
 
 import io.swagger.annotations.Api;
@@ -41,11 +45,21 @@ public class ServicoController {
 	}
 	
 	@Autowired
-	private PacoteService promocaoService;
+	private OfertaService ofertaService;
+	
+	@ApiOperation("Pegar ofertas pelo serviço")
+	@PostMapping("/pegarOfertas")
+	public List<Oferta> pegarTodasOfertasPeloServico(@RequestBody List<Servico> servicos){
+		return ofertaService.encontrarOfertasPeloServico(servicos); 
+	}
+	
+	@Autowired
+	private PromocaoService promocaoService;
+	
 	@ApiOperation("Pegar promoções pelo serviço")
 	@PostMapping("/pegarPromocoes")
-	public List<Pacote> pegarTodasPromocoesPeloServico(@RequestBody List<Servico> servicos){
-		return promocaoService.encontrarPacotesPeloServico(servicos); // pegar função correta //
+	public List<Promocao> pegarTodasPromocoesPeloServico(@RequestBody List<Servico> servicos){
+		return promocaoService.encontrarPromocoesPeloServico(servicos);
 	}
 	
 	
@@ -93,7 +107,7 @@ public class ServicoController {
 	
 	@ApiOperation("Pegar todos os serviços obrigatórios")
 	@GetMapping("/todosServicosObrigatorios/{id}")
-	public List<Servico> pegarServicoObrigatorio(String servicoObrigatorio) {
+	public List<Servico> pegarServicoObrigatorio( @PathVariable String servicoObrigatorio) {
 		 return servicoService.pegarServicoObrigatorio(servicoObrigatorio);
 	}
 	

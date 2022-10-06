@@ -13,5 +13,6 @@ public class Promocao {
 	private String nome;
 	private String preco;
 	private List<Pacote> pacotes = new ArrayList<>();
+	private List<Oferta> ofertas = new ArrayList<>();
 		
 }
