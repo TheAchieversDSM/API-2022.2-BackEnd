@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Oferta;
-import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.services.OfertaService;
-import com.api.crossSelling_Uol.services.PacoteService;
-import com.api.crossSelling_Uol.services.PromocaoService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

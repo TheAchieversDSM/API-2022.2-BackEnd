@@ -1,5 +1,6 @@
 package com.api.crossSelling_Uol.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -72,6 +73,17 @@ public class ServicoService {
 	public List<Servico> pegarComplementos(String id){
 		Servico complementar = bancoServico.findById(id).orElse(null);
 		return complementar.getComplementares();
+	}
+	
+	public List<Servico> pegarComplementosParaCarrinho(List<Servico> servicos){
+		List<Servico> complementos = new ArrayList();
+		for (int i = 0; i < servicos.size() ; i++) {
+			Servico servico = servicos.get(i);
+			if(servico.getComplementares().size() != 0   ) {
+				complementos.add(servico.getComplementares().get(0));
+			}
+		}
+		return complementos;
 	}
 	
 }

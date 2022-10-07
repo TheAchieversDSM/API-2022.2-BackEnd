@@ -14,12 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Promocao;
-import com.api.crossSelling_Uol.models.Servico;
-import com.api.crossSelling_Uol.repositories.PacoteRepository;
-import com.api.crossSelling_Uol.repositories.PromocaoRepository;
-import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.PromocaoService;
 
 import io.swagger.annotations.Api;

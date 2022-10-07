@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Oferta;
 import com.api.crossSelling_Uol.models.Pacote;
-import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.models.Promocao;
 import com.api.crossSelling_Uol.models.Servico;
-import com.api.crossSelling_Uol.repositories.ServicoRepository;
 import com.api.crossSelling_Uol.services.OfertaService;
 import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.PromocaoService;
@@ -81,16 +79,22 @@ public class ServicoController {
 		return servicoService.encontrarExcetoComplementos(id);
 	}
 	
-	@ApiOperation("Pegar todos os serviços pelos produtos que o compoem")
+	/*@ApiOperation("Pegar todos os serviços pelos produtos que o compoem")
 	@GetMapping("/pegarTodosServicosPeloProduto/{id}")
 	public List<Servico> pegarTodosServicosPeloProduto(@PathVariable String id) {
 		return servicoService.encontrarServicosPeloProduto(id);
-	}
+	}*/
 	
 	@ApiOperation("Pegar todos os complementares de um serviço")
 	@GetMapping("/todosComplementos/{id}")
 	public List<Servico> pegarComplementos(@PathVariable String id )  {
 		return servicoService.pegarComplementos(id);
+	}
+	
+	@ApiOperation("Pegar todos os complementares de um serviço")
+	@PostMapping("/pegarComplementosParaCarrinho")
+	public List<Servico> pegarComplementosParaCarrinho(@RequestBody List<Servico> servicos )  {
+		return servicoService.pegarComplementosParaCarrinho(servicos);
 	}
 	
 	@ApiOperation("Criar novo serviço")
