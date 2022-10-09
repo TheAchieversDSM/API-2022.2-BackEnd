@@ -112,8 +112,8 @@ public class ServicoController {
 	
 	@ApiOperation("Pegar todos os serviços obrigatórios")
 	@GetMapping("/todosServicosObrigatorios/{id}")
-	public List<Servico> pegarServicoObrigatorio( @PathVariable String servicoObrigatorio) {
-		 return servicoService.pegarServicoObrigatorio(servicoObrigatorio);
+	public List<Servico> pegarServicoObrigatorio( @PathVariable String id) {
+		 return servicoService.pegarServicoObrigatorio(id);
 	}
 	
 	@ApiOperation("Criar serviço obrigatório")
