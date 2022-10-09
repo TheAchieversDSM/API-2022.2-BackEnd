@@ -33,13 +33,17 @@
 
  <h3>:arrows_counterclockwise: Rotas</h3>
   <h4>:computer: Rotas Produtos</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/Gtr3lsl.png" />
+  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/ubASdLX.png" />
   
   <h4>:bellhop_bell: Rotas Serviços</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/QK4nKIM.png" />
+  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/dlfwn7R.png" />
+  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/8gU03Z9.png" />
   
    <h4>:package: Rotas Pacotes</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/r4SIhXr.png" />
+  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/PbTdV4P.png" />
   
-   <h4>:heavy_dollar_sign: Rotas Promoções</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/USUDKAQ.png" />
+   <h4>:heavy_dollar_sign: Rotas Ofertas</h4>
+  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/6zhT1wS.png" />
+  
+   <h4>:moneybag: Rotas Promoções</h4>
+  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/QF4SVEH.png" />
