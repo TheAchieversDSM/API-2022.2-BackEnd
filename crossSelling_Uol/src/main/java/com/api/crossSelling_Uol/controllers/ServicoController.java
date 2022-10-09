@@ -95,6 +95,7 @@ public class ServicoController {
 	@PostMapping("/pegarComplementosParaCarrinho")
 	public List<Servico> pegarComplementosParaCarrinho(@RequestBody List<Servico> servicos )  {
 		return servicoService.pegarComplementosParaCarrinho(servicos);
+		
 	}
 	
 	@ApiOperation("Criar novo serviço")

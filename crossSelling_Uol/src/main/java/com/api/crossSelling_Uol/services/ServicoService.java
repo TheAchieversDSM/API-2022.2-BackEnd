@@ -79,9 +79,11 @@ public class ServicoService {
 	public List<Servico> pegarComplementosParaCarrinho(List<Servico> servicos){
 		List<Servico> complementos = new ArrayList();
 		for (int i = 0; i < servicos.size() ; i++) {
-			Servico servico = servicos.get(i);
-			if(servico.getComplementares().size() != 0   ) {
+			Servico servico = bancoServico.findById(servicos.get(i).getId()).orElse(null) ;
+			
+			if(servico.getComplementares().size() > 0   ) {
 				complementos.add(servico.getComplementares().get(0));
+				
 			}
 		}
 		return complementos;
