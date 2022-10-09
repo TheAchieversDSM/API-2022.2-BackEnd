@@ -34,6 +34,7 @@ public class ServicoService {
 	}
 	
 	public void atualizarServico(Servico servicoAtualizado) {
+		Servico servico = bancoServico.findById(servicoAtualizado.getId()).orElse(null);
 		bancoServico.save(servicoAtualizado);
 	}
 	

@@ -32,11 +32,9 @@ public class OfertaService {
 	
 	public List<Oferta> encontrarOfertasPeloServico(List<Servico> servicos){
 		List<Pacote> pacotes = pacoteService.encontrarPacotesPeloServico(servicos);
-		System.out.print(pacotes);
 		List<Oferta> ofertas =  new ArrayList();
 		for (int i = 0; i < pacotes.size() ; i++) {
 			ofertas.addAll(bancoOferta.findOfertaByPack(pacotes.get(i).getId()));
-			System.out.print(pacotes.get(i));
 		}
 		return ofertas;
 	}

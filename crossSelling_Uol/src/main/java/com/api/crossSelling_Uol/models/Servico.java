@@ -15,7 +15,6 @@ public class Servico {
 	@Id
 	private String id;
 	private String nome;
-	private String preco;
 	private String descricao;
 	private String categoria;
 	private List <Servico> servicosObrigatorios = new ArrayList<>();
