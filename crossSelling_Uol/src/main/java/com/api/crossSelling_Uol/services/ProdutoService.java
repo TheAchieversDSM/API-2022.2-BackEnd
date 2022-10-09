@@ -30,6 +30,5 @@ public class ProdutoService {
 		bancoProduto.save(produtoAtualizado);
 	}
 
-	
 
 }

@@ -1,3 +1,4 @@
+
 package com.api.crossSelling_Uol.controllers;
 
 import java.util.List;
@@ -13,12 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Promocao;
-import com.api.crossSelling_Uol.models.Servico;
-import com.api.crossSelling_Uol.repositories.PacoteRepository;
-import com.api.crossSelling_Uol.repositories.PromocaoRepository;
-import com.api.crossSelling_Uol.services.PacoteService;
 import com.api.crossSelling_Uol.services.PromocaoService;
 
 import io.swagger.annotations.Api;
@@ -40,15 +36,15 @@ public class PromocaoController {
 	
 	@ApiOperation("Pegar todas as promoções existentes")
 	@GetMapping("/pegarTodasPromocoes")
-	public List<Promocao> pegarTodosProdutos() {
-		return servicoPromocao.encontrarTodos();
+	public List<Promocao> pegarTodasPromocoes() {
+		return servicoPromocao.encontrarTodas(); 
 	}
 	
-	@ApiOperation("Pegar todos os pacotes pelos serviços que o compoem")
-	@PostMapping("/pegarTodasPromocoesPeloPacote")
+	/*@ApiOperation("Pegar todos as promoções pelas OFERTAS que a compoem")
+	@PostMapping("/pegarTodasPromocoesPelaOferta")
 	public List<Promocao> pegarTodosPacotesPeloServico(@RequestBody List<Pacote> pacotes){
 		return servicoPromocao.encontrarPacotesPeloServico(pacotes);
-	}
+	}*/
 	
 	@ApiOperation("Criar nova promoção")
 	@PostMapping("/criarPromocao")

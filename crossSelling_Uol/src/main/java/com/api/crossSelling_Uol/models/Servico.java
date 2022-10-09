@@ -10,13 +10,15 @@ import lombok.Data;
 
 @Data
 @Document
+
 public class Servico {
 	@Id
 	private String id;
 	private String nome;
-	private String preco;
 	private String descricao;
-	private List<Produto> produtos = new ArrayList<>();
+	private String categoria;
+	private List <Servico> servicosObrigatorios = new ArrayList<>();
+	private List <Produto> produtos = new ArrayList<>();
 	private List<Servico> complementares = new ArrayList<>();
 
 }

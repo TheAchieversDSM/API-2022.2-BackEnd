@@ -9,7 +9,7 @@ import com.api.crossSelling_Uol.models.Promocao;
 
 public interface PromocaoRepository extends MongoRepository <Promocao, String> {
 	
-	@Query("{'pacotes' :  { $elemMatch: { '_id' : ?0 } } }")
+	@Query("{'ofertas' :  { $elemMatch: { '_id' : ?0 } } }")
 	List<Promocao> findPromocoesByPack(String id);
 
 }
