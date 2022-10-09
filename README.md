@@ -15,6 +15,7 @@
   <img src="https://img.shields.io/badge/Swagger-CED4DA?style=for-the-badge&logo=Swagger&logoColor=85EA2D" />
 </p>
  <h3>:gear: Execução do Sistema</h3>
+ <p>Para rodar o projeto localmente, será necessário ter o <a href="https://www.eclipse.org/downloads/">Eclipse</a> e o <a href="https://projectlombok.org/download">Lombok</a> instalados.</p>
 
 ```bash 
 # Baixe o repositório ou clone usando o comando:
@@ -33,17 +34,17 @@
 
  <h3>:arrows_counterclockwise: Rotas</h3>
   <h4>:computer: Rotas Produtos</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/ubASdLX.png" />
+  <img alt="Rotas referentes aos produtos." src="https://i.imgur.com/ubASdLX.png" />
   
   <h4>:bellhop_bell: Rotas Serviços</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/dlfwn7R.png" />
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/8gU03Z9.png" />
+  <img alt="Rotas referentes aos serviços." src="https://i.imgur.com/dlfwn7R.png" />
+  <img alt="Rotas referentes aos serviços." src="https://i.imgur.com/8gU03Z9.png" />
   
    <h4>:package: Rotas Pacotes</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/PbTdV4P.png" />
+  <img alt="Rotas referentes aos pacotes." src="https://i.imgur.com/PbTdV4P.png" />
   
    <h4>:heavy_dollar_sign: Rotas Ofertas</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/6zhT1wS.png" />
+  <img alt="Rotas referentes às ofertas." src="https://i.imgur.com/6zhT1wS.png" />
   
    <h4>:moneybag: Rotas Promoções</h4>
-  <img alt="Layout mais simples para conectividades precárias." src="https://i.imgur.com/QF4SVEH.png" />
+  <img alt="Rotas referentes às promoções." src="https://i.imgur.com/QF4SVEH.png" />
