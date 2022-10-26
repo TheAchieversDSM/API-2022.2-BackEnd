@@ -76,6 +76,11 @@ public class ServicoService {
 		return complementar.getComplementares();
 	}
 	
+	public List<Produto> pegarProduto(String id){
+		Servico produtos = bancoServico.findById(id).orElse(null);
+		return produtos.getProdutos();
+	}
+	
 	public List<Servico> pegarComplementosParaCarrinho(List<Servico> servicos){
 		List<Servico> complementos = new ArrayList();
 		for (int i = 0; i < servicos.size() ; i++) {

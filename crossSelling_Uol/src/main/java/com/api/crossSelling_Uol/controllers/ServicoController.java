@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Oferta;
 import com.api.crossSelling_Uol.models.Pacote;
+import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.models.Promocao;
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.services.OfertaService;
@@ -65,6 +66,12 @@ public class ServicoController {
 	@GetMapping("/pegarServico/{id}")
 	public Optional<Servico> pegarServico(@PathVariable String id) {
 		return servicoService.encontrarPeloId(id);
+	}
+	
+	@ApiOperation("Pegar todos os produtos de um serviço")
+	@GetMapping("/todosProdutos/{id}")
+	public List<Produto> pegarProdutos(@PathVariable String id )  {
+		return servicoService.pegarProduto(id);
 	}
 	
 	@ApiOperation("Pegar todos os serviços existentes")

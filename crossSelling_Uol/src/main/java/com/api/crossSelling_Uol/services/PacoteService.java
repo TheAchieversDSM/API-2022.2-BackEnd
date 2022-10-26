@@ -25,10 +25,10 @@ public class PacoteService {
 		return bancoPacote.findAll();
 	}
 	
-	public List<Servico> encontrarServicosPeloPacote(Pacote pacote){
+	/*public List<Servico> encontrarServicosPeloPacote(Pacote pacote){
 		Pacote pack = bancoPacote.findById(pacote.getId()).orElse(null);
 		return pack.getServicos();
-	}
+	}*/
 	
 	public List<Pacote> encontrarPacotesPeloServico(List<Servico> servicos){
 		List<Pacote> pacotes = new ArrayList();
