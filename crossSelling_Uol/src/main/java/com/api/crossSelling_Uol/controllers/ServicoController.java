@@ -141,4 +141,10 @@ public class ServicoController {
 		servicoService.atualizarComplementos(complemento, id);
 	}
 	
+	@ApiOperation("Adicionar novo pacote a um serviço já existente")
+	@PutMapping("/atualizarPacotes/{id}")
+	public void inserirNovoPacote(@RequestBody Pacote pacote, @PathVariable String id ) {
+		servicoService.inserirNovoPacote(pacote, id);
+	}
+	
 }
