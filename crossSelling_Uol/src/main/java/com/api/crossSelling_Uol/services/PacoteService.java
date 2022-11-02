@@ -39,8 +39,8 @@ public class PacoteService {
 		
 	}
 	
-	public Pacote inserirPacote(Pacote novoPacote) {
-		return bancoPacote.save(novoPacote);
+	public String inserirPacote(Pacote novoPacote) {
+		return bancoPacote.save(novoPacote).getId();
 	}
 	
 	public void atualizarPacote(Pacote pacoteAtualizado) {

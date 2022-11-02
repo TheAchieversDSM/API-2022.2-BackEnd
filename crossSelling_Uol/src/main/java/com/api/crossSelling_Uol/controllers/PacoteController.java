@@ -48,8 +48,8 @@ public class PacoteController {
 	
 	@ApiOperation("Criar novo pacote")
 	@PostMapping("/criarPacote")
-	public void criarPacote(@RequestBody Pacote novoPacote) {
-		servicoPacote.inserirPacote(novoPacote);
+	public String criarPacote(@RequestBody Pacote novoPacote) {
+		return servicoPacote.inserirPacote(novoPacote);
 	}
 	
 	@ApiOperation("Atualizar pacote já existente")
