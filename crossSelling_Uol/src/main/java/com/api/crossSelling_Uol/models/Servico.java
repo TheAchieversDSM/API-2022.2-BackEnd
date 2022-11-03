@@ -16,7 +16,7 @@ public class Servico {
 	private String id;
 	private String nome;
 	private String descricao;
-	private List<String> categoria;
+	private String categoria;
 	private List<Pacote> pacotes;
 	private List <Produto> produtos = new ArrayList<>();
 	private List <Servico> servicosObrigatorios = new ArrayList<>();
