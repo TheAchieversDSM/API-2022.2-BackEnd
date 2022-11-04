@@ -14,6 +14,6 @@ public class Pacote {
 	private String descricao;
 	private Servico servico;
 	private String periodo;
+	private String preco;
 	private List<Produto> produtos = new ArrayList<>();
-	
 }
