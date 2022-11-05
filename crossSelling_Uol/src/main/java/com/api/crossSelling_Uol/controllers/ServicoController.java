@@ -142,7 +142,7 @@ public class ServicoController {
 	}
 	
 	@ApiOperation("Adicionar novo pacote a um serviço já existente")
-	@PutMapping("/atualizarPacotes/{id}")
+	@PostMapping("/atualizarPacotes/{id}")
 	public void inserirNovoPacote(@RequestBody Pacote pacote, @PathVariable String id ) {
 		servicoService.inserirNovoPacote(pacote, id);
 	}

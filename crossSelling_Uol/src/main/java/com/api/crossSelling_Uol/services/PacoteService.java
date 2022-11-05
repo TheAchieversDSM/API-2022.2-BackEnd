@@ -41,9 +41,7 @@ public class PacoteService {
 	}
 	
 	public String inserirPacote(Pacote novoPacote) {
-		String id = bancoPacote.save(novoPacote).getId();
-		servicoService.inserirNovoPacote(novoPacote , novoPacote.getServico().getId());
-		return id;
+		return bancoPacote.save(novoPacote).getId();
 	}
 	
 	public void atualizarPacote(Pacote pacoteAtualizado) {
