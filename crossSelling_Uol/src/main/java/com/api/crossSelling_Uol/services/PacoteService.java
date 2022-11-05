@@ -16,6 +16,7 @@ import com.api.crossSelling_Uol.repositories.PacoteRepository;
 public class PacoteService {
 	@Autowired
 	private PacoteRepository bancoPacote;
+	private ServicoService servicoService;
 	
 	public Optional<Pacote> encontrarPeloId(String id) {
 		return bancoPacote.findById(id);
@@ -40,7 +41,9 @@ public class PacoteService {
 	}
 	
 	public String inserirPacote(Pacote novoPacote) {
-		return bancoPacote.save(novoPacote).getId();
+		String id = bancoPacote.save(novoPacote).getId();
+		servicoService.inserirNovoPacote(novoPacote , novoPacote.getServico().getId());
+		return id;
 	}
 	
 	public void atualizarPacote(Pacote pacoteAtualizado) {
