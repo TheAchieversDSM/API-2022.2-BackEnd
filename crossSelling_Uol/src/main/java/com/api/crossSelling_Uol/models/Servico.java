@@ -20,9 +20,12 @@ public class Servico {
 	private String nome;
 	private String descricao;
 	private String categoria;
-	private List <Servico> servicosObrigatorios = new ArrayList<>();
+	private List<Pacote> pacotes;
 	private List <Produto> produtos = new ArrayList<>();
 	private List <Servico> complementares = new ArrayList<>();
 	@JsonIgnoreProperties(value = { "servico" })
-	private List <Pacote> pacotes = new ArrayList<>();
+	private List <Pacote> pacotes = new ArrayList<>();====
+	private List <Servico> servicosObrigatorios = new ArrayList<>();
+
+
 }
