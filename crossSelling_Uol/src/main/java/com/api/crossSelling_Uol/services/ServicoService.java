@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.models.Produto;
 import com.api.crossSelling_Uol.models.Servico;
 import com.api.crossSelling_Uol.repositories.ServicoRepository;
@@ -52,6 +53,12 @@ public class ServicoService {
 	public List<Servico> pegarServicosPelaCategoria (String categoria) {
 	 return	bancoServico.findServicosByCate(categoria);
 	}
+	
+	public void inserirNovoPacote (Pacote pacote, String id) {
+		Servico alvo = bancoServico.findById(id).orElse(null);
+		alvo.getPacotes().add(pacote);
+		bancoServico.save(alvo);
+	}
 
 	public List<Servico> encontrarExcetoComplementos(String id){
 		Servico alvo = bancoServico.findById(id).orElse(null);
@@ -76,14 +83,18 @@ public class ServicoService {
 		return complementar.getComplementares();
 	}
 	
+	public List<Produto> pegarProduto(String id){
+		Servico produtos = bancoServico.findById(id).orElse(null);
+		return produtos.getProdutos();
+	}
+	
 	public List<Servico> pegarComplementosParaCarrinho(List<Servico> servicos){
 		List<Servico> complementos = new ArrayList();
 		for (int i = 0; i < servicos.size() ; i++) {
 			Servico servico = bancoServico.findById(servicos.get(i).getId()).orElse(null) ;
 			
 			if(servico.getComplementares().size() > 0   ) {
-				complementos.add(servico.getComplementares().get(0));
-				
+				complementos.add(servico.getComplementares().get(0));				
 			}
 		}
 		return complementos;

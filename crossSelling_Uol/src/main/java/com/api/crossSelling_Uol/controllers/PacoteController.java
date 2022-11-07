@@ -40,16 +40,16 @@ public class PacoteController {
 		return servicoPacote.encontrarTodos();
 	}
 	
-	@ApiOperation("Pegar todos os serviços pelo pacote que o engloba")
+	/*@ApiOperation("Pegar todos os serviços pelo pacote que o engloba")
 	@PostMapping("/pegarServicos")
 	public List<Servico> pegarTodosServicosPeloPacote(@RequestBody Pacote pacote ){
 		return servicoPacote.encontrarServicosPeloPacote(pacote);
-	}
+	}*/
 	
 	@ApiOperation("Criar novo pacote")
 	@PostMapping("/criarPacote")
-	public void criarPacote(@RequestBody Pacote novoPacote) {
-		servicoPacote.inserirPacote(novoPacote);
+	public String criarPacote(@RequestBody Pacote novoPacote) {
+		return servicoPacote.inserirPacote(novoPacote);
 	}
 	
 	@ApiOperation("Atualizar pacote já existente")

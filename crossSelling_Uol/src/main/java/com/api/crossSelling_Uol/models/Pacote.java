@@ -12,6 +12,8 @@ public class Pacote {
 	private String id;
 	private String nome;
 	private String descricao;
-	private List<Servico> servicos = new ArrayList<>();
-	
+	private Servico servico;
+	private String periodo;
+	private String preco;
+	private List<Produto> produtos = new ArrayList<>();
 }
