@@ -12,6 +12,5 @@ public class Oferta {
 		@Id
 		private String id;
 		private Pacote pacote;
-		private List<String> periodo = new ArrayList<>();
-		private List<String> preco = new ArrayList<>();
+		private Object preco;
 }

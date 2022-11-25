@@ -39,6 +39,14 @@ public class OfertaService {
 		return ofertas;
 	}
 	
+	public List<Oferta> encontrarOfertasPeloPacote(List<Pacote> pacotes){
+		List<Oferta> ofertas =  new ArrayList();
+		for (int i = 0; i < pacotes.size() ; i++) {
+			ofertas.addAll(bancoOferta.findOfertaByPack(pacotes.get(i).getId()));
+		}
+		return ofertas;
+	}
+	
 	
 	public Optional<Oferta> encontrarPeloId(String id) {
 		return bancoOferta.findById(id);
@@ -47,6 +55,5 @@ public class OfertaService {
 	public void atualizarOferta(Oferta ofertaAtualizada) {
 		bancoOferta.save(ofertaAtualizada);
 	}
-
 	
 }

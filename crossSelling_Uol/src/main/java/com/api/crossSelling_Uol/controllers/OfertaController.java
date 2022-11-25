@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.crossSelling_Uol.models.Oferta;
+import com.api.crossSelling_Uol.models.Pacote;
 import com.api.crossSelling_Uol.services.OfertaService;
 
 import io.swagger.annotations.Api;
@@ -42,6 +43,14 @@ public class OfertaController {
 	public Optional<Oferta> pegarOferta(@PathVariable String id ) {
 		return servicoOferta.encontrarPeloId(id);
 	}
+	
+	
+	@ApiOperation("Pegar ofertas de um pacote")
+	@PostMapping("/pegarOfertasPacotes")
+	public List<Oferta> pegarOferta(@RequestBody List<Pacote> pacotes ) {
+		return servicoOferta.encontrarOfertasPeloPacote(pacotes);
+	}
+	
 	
 	@ApiOperation("Criar nova oferta")
 	@PostMapping("/criarOferta")
